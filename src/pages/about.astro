@@ -1,0 +1,87 @@
+---
+import LogoFlow from "$components/LogoFlow.astro";
+import Projects from "$components/Projects.astro";
+import App from "$layouts/App.astro";
+
+const cores = [
+	{ name: "Svelte", logo: "devicon--svelte" },
+	{ name: "Astro", logo: "devicon--astro" },
+	{ name: "TypeScript", logo: "devicon--typescript" },
+	{ name: "Tailwind CSS", logo: "devicon--tailwindcss" },
+	{ name: "Rust", logo: "devicon--rust" },
+	{ name: "Java", logo: "devicon--java" },
+	{ name: "Python", logo: "devicon--python" },
+	// { name: "Typst", logo: "" },
+	{ name: "Markdown", logo: "devicon--markdown" }
+];
+
+const tools = [
+	{ name: "Cloudflare", logo: "devicon--cloudflare" },
+	{ name: "Docker", logo: "devicon--docker" },
+	// { name: "Nginx", logo: "devicon--nginx" },
+	// { name: "Drizzle", logo: "" },
+	{ name: "PostgreSQL", logo: "devicon--postgresql" },
+	{ name: "MongoDB", logo: "devicon--mongodb" },
+	{ name: "Git", logo: "devicon--git" },
+	{ name: "pnpm", logo: "devicon--pnpm" },
+	{ name: "Biome", logo: "devicon--biome" },
+	{ name: "Arch Linux", logo: "devicon--archlinux" },
+	{ name: "Zsh", logo: "devicon--zsh" },
+	{ name: "VSCode", logo: "devicon--vscode" },
+	{ name: "Neovim", logo: "devicon--neovim" }
+];
+
+const projects = [
+	{
+		name: "ThoughtLite",
+		description: "A modern Astro theme, focused on content creation.",
+		link: "https://astro.build/themes/details/thoughtlite/",
+		tags: ["Astro", "Svelte"]
+	},
+	{
+		name: "@tuyuritio/remark-ruby",
+		description: "Remark plugin to support ruby annotations.",
+		link: "https://www.npmjs.com/package/@tuyuritio/remark-ruby",
+		tags: ["Remark", "TypeScript"]
+	},
+	{
+		name: "@tuyuritio/remark-attribute",
+		description: "Remark plugin to inject HTML attributes.",
+		link: "https://www.npmjs.com/package/@tuyuritio/remark-attribute",
+		tags: ["Remark", "TypeScript"]
+	}
+];
+---
+
+<App title="TuyuriTio - About">
+	<div class="flex justify-center mt-40">
+		<div class="flex flex-col gap-25 max-w-4xl w-full">
+			<div class="flex items-center gap-15">
+				<aside class="flex flex-col items-center gap-8">
+					<a href="/" aria-label="Landing" class="w-40 h-40 overflow-hidden">
+						<img src="https://avatars.githubusercontent.com/u/46957197?v=4" alt="Avatar" draggable="false" transition:name="avatar" class="inline-block w-full h-full rounded-full object-cover object-c" />
+					</a>
+
+					<div class="flex gap-5 text-xl" transition:name="socials">
+						<a href="https://github.com/tuyuritio" target="_blank" aria-label="GitHub"><i class="iconify lucide--github"></i></a>
+						<a href="mailto:hi@ttio.cc" aria-label="Email"><i class="iconify lucide--at-sign"></i></a>
+						<a href="https://ttio.cc" target="_blank" aria-label="Blog"><i class="iconify lucide--audio-waveform"></i></a>
+					</div>
+				</aside>
+
+				<article class="flex flex-col gap-4">
+					<p>Hi, I'm <strong transition:name="name"><ruby>五月七日<rt>Tuyuri</rt></ruby><ruby>千緒<rt>Tio</rt></ruby></strong>, you can call me just <strong>Tio</strong>.</p>
+					<p>// TODO</p>
+					<p>It’s hard to say that programming is my hobby, but I really enjoy the process of creating and solving things with code.</p>
+				</article>
+			</div>
+
+			<div class="flex flex-col gap-10 grayscale hover:grayscale-0 transition-[filter] duration-350">
+				<LogoFlow items={cores} />
+				<LogoFlow items={tools} reverse={true} />
+			</div>
+
+			<Projects projects={projects} />
+		</div>
+	</div>
+</App>

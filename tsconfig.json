@@ -19,6 +19,9 @@
       "$styles/*": [
         "src/styles/*"
       ],
+      "$content/*": [
+        "src/content/*"
+      ]
     },
   }
 }
