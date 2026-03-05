@@ -15,7 +15,7 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 
-		<link rel="icon" type="image/jpeg" href="/favicon.jpg">
+		<link rel="icon" type="image/jpeg" href="/favicon.jpg" />
 
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,6 +24,15 @@ const { title } = Astro.props;
 		<title>{title}</title>
 
 		<ClientRouter />
+
+		<script>
+			document.addEventListener("astro:page-load", () => {
+				document.querySelectorAll<HTMLAnchorElement>('a[href^="mailto:["]').forEach(link => {
+					const match = link.getAttribute("href")?.match(/mailto:\[(.*?)\]/);
+					if (match?.[1]) link.href = `mailto:${atob(match[1])}`;
+				});
+			});
+		</script>
 	</head>
 	<body>
 		<slot />
