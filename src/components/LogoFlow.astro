@@ -31,12 +31,12 @@ const { items = [], reverse = false } = Astro.props;
 </style>
 
 <div class="relative overflow-x-clip mask">
-	<div style={`--marquee-duration: ${items.length * 3}s;`} class="flex gap-20 pl-20 w-max animate-marquee" class:list={[reverse && "reverse"]}>
+	<div style={`--marquee-duration: ${items.length * 3}s;`} class="flex gap-15 pl-15 w-max animate-marquee" class:list={[reverse && "reverse"]}>
 		{
 			items.concat(items).map(tech => (
-				<div class="flex items-center gap-3">
-					<i class:list={["w-7 h-7", "iconify-color", tech.logo]} />
-					<span class="text-sm">{tech.name}</span>
+				<div class="flex items-center gap-2">
+					<i class:list={["w-6 h-6", "iconify-color", tech.logo]} />
+					<span class="text-xs">{tech.name}</span>
 				</div>
 			))
 		}
