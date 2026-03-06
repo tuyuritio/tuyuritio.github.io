@@ -1,0 +1,35 @@
+@media (pointer: fine) {
+	* {
+		cursor: none !important;
+	}
+
+	#cursor-dot,
+	#cursor-ring {
+		position: fixed;
+		top: 0;
+		left: 0;
+		border-radius: 50%;
+		pointer-events: none;
+		z-index: 9999;
+		opacity: 0;
+		translate: -50% -50%;
+		will-change: transform;
+	}
+
+	#cursor-dot {
+		width: 8px;
+		height: 8px;
+		background-color: var(--primary-color);
+		transition: opacity 0.2s ease;
+	}
+
+	#cursor-ring {
+		width: 32px;
+		height: 32px;
+		border: 1.5px solid var(--selection-color);
+		transition:
+			opacity 0.3s ease,
+			border-radius 0.3s ease,
+			border-color 0.3s ease;
+	}
+}

@@ -7,11 +7,8 @@
 @theme {
 	--color-primary: var(--primary-color);
 	--color-secondary: var(--secondary-color);
-	--color-remark: var(--remark-color);
 	--color-weak: var(--weak-color);
 	--color-background: var(--background-color);
-	--color-block: var(--block-color);
-	--color-shadow: var(--shadow-color);
 	--color-selection: var(--selection-color);
 }
 
