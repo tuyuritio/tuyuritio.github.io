@@ -5,7 +5,7 @@ import App from "$layouts/App.astro";
 <App>
 	<div class="flex items-center justify-center h-[90vh]">
 		<div class="flex flex-col items-center">
-			<a href="/~" aria-label="About" class="w-50 h-50 rounded-full overflow-hidden" data-magnetic="0.3">
+			<a href="/~" aria-label="About" class="w-50 h-50 rounded-full overflow-hidden" data-magnetic="0.3" data-tooltip="Click to view bio">
 				<img src="/favicon.jpg" alt="Avatar" draggable="false" transition:name="avatar" class="inline-block w-full h-full rounded-full object-cover object-c" />
 			</a>
 
@@ -15,9 +15,9 @@ import App from "$layouts/App.astro";
 			</strong>
 
 			<div class="flex gap-10 mt-4 text-xl" transition:name="socials">
-				<a href="https://github.com/tuyuritio" target="_blank" aria-label="GitHub" data-magnetic="0.8" class="inline-flex"><i class="iconify lucide--github"></i></a>
-				<a href={`mailto:[${btoa("i@57t.io")}]`} aria-label="Email" data-magnetic="0.8" class="inline-flex"><i class="iconify lucide--at-sign"></i></a>
-				<a href="https://ttio.cc" target="_blank" aria-label="Blog" data-magnetic="0.8" class="inline-flex"><i class="iconify lucide--audio-waveform"></i></a>
+				<a href="https://github.com/tuyuritio" target="_blank" aria-label="GitHub" data-magnetic="0.8" data-tooltip="Browse projects" class="inline-flex"><i class="iconify lucide--github"></i></a>
+				<a href={`mailto:[${btoa("i@57t.io")}]`} aria-label="Email" data-magnetic="0.8" data-tooltip="Get in touch" class="inline-flex"><i class="iconify lucide--at-sign"></i></a>
+				<a href="https://ttio.cc" target="_blank" aria-label="Blog" data-magnetic="0.8" data-tooltip="Explore thoughts" class="inline-flex"><i class="iconify lucide--audio-waveform"></i></a>
 			</div>
 		</div>
 	</div>

@@ -43,8 +43,8 @@ const title = "TuyuriTio";
 					style: document.getElementById("cursor-ring")!.style,
 					x: 0,
 					y: 0,
-					width: 32,
-					height: 32
+					width: 0,
+					height: 0
 				};
 
 				const target = {
@@ -53,6 +53,8 @@ const title = "TuyuriTio";
 					width: 0,
 					height: 0
 				};
+
+				const tooltip = document.getElementById("tooltip")!;
 
 				let initial = true;
 				document.addEventListener("mousemove", e => {
@@ -101,6 +103,11 @@ const title = "TuyuriTio";
 					ring.style.height = `${ring.height}px`;
 					ring.style.transform = `translate(${ring.x}px, ${ring.y}px)`;
 
+					if (tooltip.style.visibility === "visible") {
+						tooltip.style.left = `${ring.x}px`;
+						tooltip.style.top = `${ring.y - ring.height / 2}px`;
+					}
+
 					requestAnimationFrame(tick);
 				}
 				requestAnimationFrame(tick);
@@ -121,6 +128,15 @@ const title = "TuyuriTio";
 						ring.style.borderRadius = circle ? "50%" : `${targetRadius + pad}px`;
 
 						element.style.transition = "transform 0.1s linear";
+
+						if (element.dataset.tooltip) {
+							tooltip.textContent = element.dataset.tooltip;
+							tooltip.style.opacity = "1";
+							tooltip.style.visibility = "visible";
+
+							tooltip.style.left = `${target.rectangle.left + target.rectangle.width / 2}px`;
+							tooltip.style.top = `${target.rectangle.top - target.rectangle.height / 2}px`;
+						}
 					});
 
 					const strength = parseFloat(element.dataset.magnetic!);
@@ -142,14 +158,19 @@ const title = "TuyuriTio";
 
 						element.style.transition = "transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)";
 						element.style.transform = "";
+
+						tooltip.style.opacity = "0";
+						tooltip.style.visibility = "hidden";
 					});
 				}
 
 				document.addEventListener("astro:page-load", () => {
-					target.$ = null;
 					dot.style.opacity = "1";
+					target.$ = null;
 					target.width = 32;
 					target.height = 32;
+					tooltip.style.opacity = "0";
+					tooltip.style.visibility = "hidden";
 
 					document.querySelectorAll<HTMLElement>("[data-magnetic]").forEach(magnetic);
 				});
@@ -159,6 +180,7 @@ const title = "TuyuriTio";
 	<body>
 		<div id="cursor-dot" transition:persist></div>
 		<div id="cursor-ring" transition:persist></div>
+		<div id="tooltip" transition:persist></div>
 		<slot />
 	</body>
 </html>
