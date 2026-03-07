@@ -165,7 +165,7 @@ const title = "TuyuriTio";
 				}
 
 				document.addEventListener("astro:page-load", () => {
-					dot.style.opacity = "1";
+					if (initial) dot.style.opacity = "0";
 					target.$ = null;
 					target.width = 32;
 					target.height = 32;
