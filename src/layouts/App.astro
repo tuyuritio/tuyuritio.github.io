@@ -58,7 +58,23 @@ const description = "Understanding asynchronously...";
 
 				const tooltip = document.getElementById("tooltip")!;
 
+				/**
+				 * Whether the page has just loaded.
+				 * Used to prevent the cursor from unexpectedly appearing before it moves to the actual position of the mouse.
+				 */
 				let initial = true;
+
+				document.addEventListener("astro:page-load", () => {
+					dot.style.opacity = initial ? "0" : "1";
+					target.$ = null;
+					target.width = 32;
+					target.height = 32;
+					tooltip.style.opacity = "0";
+					tooltip.style.visibility = "hidden";
+
+					document.querySelectorAll<HTMLElement>("[data-magnetic]").forEach(magnetic);
+				});
+
 				document.addEventListener("mousemove", e => {
 					dot.x = e.clientX;
 					dot.y = e.clientY;
@@ -114,6 +130,10 @@ const description = "Understanding asynchronously...";
 				}
 				requestAnimationFrame(tick);
 
+				/**
+				 * Adds magnetic effect to an element.
+				 * @param element The target element
+				 */
 				function magnetic(element: HTMLElement) {
 					element.addEventListener("mouseenter", () => {
 						target.$ = element;
@@ -165,17 +185,6 @@ const description = "Understanding asynchronously...";
 						tooltip.style.visibility = "hidden";
 					});
 				}
-
-				document.addEventListener("astro:page-load", () => {
-					if (initial) dot.style.opacity = "0";
-					target.$ = null;
-					target.width = 32;
-					target.height = 32;
-					tooltip.style.opacity = "0";
-					tooltip.style.visibility = "hidden";
-
-					document.querySelectorAll<HTMLElement>("[data-magnetic]").forEach(magnetic);
-				});
 			}
 		</script>
 	</head>
