@@ -9,7 +9,7 @@ const { projects = [] } = Astro.props;
 <div class="grid gap-6 grid-cols-1 sm:grid-cols-2">
 	{
 		projects.map(project => (
-			<a href={project.link} target="_blank" data-magnetic="0.1" class="flex flex-col gap-1 border-s-2 border-solid border-weak ps-4 pb-4">
+			<a href={project.link} target="_blank" data-magnetic="0.2" class="flex flex-col gap-1 border-s-2 border-solid border-weak ps-4 pb-4">
 				<h5 class="font-medium">{project.name}</h5>
 				<p class="text-secondary text-sm">{project.description}</p>
 				<section class="flex gap-2 mt-1 text-xs">
