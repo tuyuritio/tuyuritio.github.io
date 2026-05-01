@@ -147,7 +147,7 @@ const description = "Understanding asynchronously...";
 
 						const targetRadius = parseFloat(getComputedStyle(element).borderRadius);
 						const circle = targetRadius >= Math.min(target.rectangle.width, target.rectangle.height) / 2;
-						ring.style.borderRadius = circle ? "50%" : `${targetRadius + pad}px`;
+						ring.style.borderRadius = circle ? "50%" : `${targetRadius + pad / 2}px`;
 
 						element.style.transition = "transform 0.1s linear";
 

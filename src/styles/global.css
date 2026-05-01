@@ -14,19 +14,19 @@
 
 :root {
 	--primary-color: #0e0e0e;
-	--secondary-color: #50504d;
-	--background-color: #fffffd;
-	--weak-color: #e0e0de;
-	--selection-color: #adadacc3;
+	--secondary-color: #505050;
+	--background-color: #ffffff;
+	--weak-color: #e0e0e0;
+	--selection-color: #adadadc3;
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--primary-color: #dddddb;
-		--secondary-color: #aaaaa8;
-		--background-color: #0e0e0c;
-		--weak-color: #5d5d5a;
-		--selection-color: #adadacc3;
+		--primary-color: #dddddd;
+		--secondary-color: #aaaaaa;
+		--background-color: #0e0e0e;
+		--weak-color: #5d5d5d;
+		--selection-color: #adadadc3;
 	}
 }
 
