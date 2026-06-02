@@ -4,21 +4,33 @@ import App from "$layouts/App.astro";
 
 <App>
 	<div class="flex items-center justify-center h-[90vh]">
-		<div class="flex flex-col items-center">
-			<a href="/~" aria-label="About" class="w-50 h-50 rounded-full overflow-hidden" data-magnetic="0.375" data-tooltip="Click to view bio">
-				<img src="/favicon.jpg" alt="Avatar" draggable="false" transition:name="avatar" class="inline-block w-full h-full rounded-full object-cover object-c" />
-			</a>
+		<div class="flex max-sm:flex-col sm:items-end gap-20 sm:gap-28 max-w-4xl w-full max-sm:mx-4">
+			<div class="flex flex-col items-center">
+				<span class="w-42 h-42 rounded-full overflow-hidden">
+					<img src="/favicon.jpg" alt="Avatar" draggable="false" class="inline-block w-full h-full rounded-full object-cover" />
+				</span>
 
-			<strong class="flex gap-2 mt-10 text-xl font-serif tracking-widest" transition:name="name">
-				<ruby>五月七日<rp>（</rp><rt>つゆり</rt><rp>）</rp></ruby>
-				<ruby>千緒<rp>（</rp><rt>ちお</rt><rp>）</rp></ruby>
-			</strong>
+				<strong class="flex gap-2 mt-10 text-xl font-serif tracking-widest">
+					<ruby>五月七日<rp>（</rp><rt>つゆり</rt><rp>）</rp></ruby>
+					<ruby>千緒<rp>（</rp><rt>ちお</rt><rp>）</rp></ruby>
+				</strong>
 
-			<div class="flex gap-10 mt-4 text-xl" transition:name="socials">
-				<a href="https://github.com/tuyuritio" target="_blank" aria-label="GitHub" data-magnetic="0.85" data-tooltip="Browse projects" class="inline-flex"><i class="iconify lucide--github"></i></a>
-				<a href={`mailto:[${btoa("i@57t.io")}]`} aria-label="Email" data-magnetic="0.85" data-tooltip="Get in touch" class="inline-flex"><i class="iconify lucide--at-sign"></i></a>
-				<a href="https://ttio.cc" target="_blank" aria-label="Blog" data-magnetic="0.85" data-tooltip="Explore thoughts" class="inline-flex"><i class="iconify lucide--audio-waveform"></i></a>
+				<div class="flex gap-10 mt-4 text-xl">
+					<a href="https://github.com/tuyuritio" target="_blank" aria-label="GitHub" title="Browse projects" class="inline-flex"><i class="iconify lucide--github"></i></a>
+					<a href={`mailto:[${btoa("i@57t.io")}]`} aria-label="Email" title="Get in touch" class="inline-flex"><i class="iconify lucide--at-sign"></i></a>
+					<a href="https://ttio.cc" target="_blank" aria-label="Blog" title="Explore thoughts" class="inline-flex"><i class="iconify lucide--audio-waveform"></i></a>
+				</div>
 			</div>
+
+			<article class="flex flex-col gap-12 mb-10">
+				<div class="flex flex-col gap-4">
+					<p>Hi, I'm <strong><ruby>五月七日<rp>(</rp><rt>Tuyuri</rt><rp>)</rp></ruby><ruby>千緒<rp>(</rp><rt>Tio</rt><rp>)</rp></ruby></strong>. Just <strong>Tio</strong> is fine.</p>
+					<p>It’s hard to say that programming is my hobby, but I really enjoy the process of creating and solving things with code.</p>
+				</div>
+				<div class="text-selection">
+					<p>// Understanding asynchronously...</p>
+				</div>
+			</article>
 		</div>
 	</div>
 </App>

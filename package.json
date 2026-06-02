@@ -10,17 +10,17 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/svelte": "^8.1.0",
+    "@astrojs/svelte": "^8.1.2",
     "@iconify-json/devicon": "^1.2.62",
-    "@iconify-json/lucide": "^1.2.104",
+    "@iconify-json/lucide": "^1.2.111",
     "@iconify/tailwind4": "^1.2.3",
-    "@tailwindcss/vite": "^4.2.4",
-    "astro": "^6.1.10",
-    "svelte": "^5.55.5",
-    "tailwindcss": "^4.2.4"
+    "@tailwindcss/vite": "^4.3.0",
+    "astro": "^6.4.2",
+    "svelte": "^5.56.0",
+    "tailwindcss": "^4.3.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.13",
+    "@biomejs/biome": "^2.4.16",
     "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1"
   }
